@@ -12,6 +12,12 @@
 - RCV 
 - data are send from controller to view
 - to get dynamic args in the controllers method the Route shoud have dynamic data in web.php
-- view ("post.show" , [])
-- [] => vars inside this array should be used as real arrays starting with $
+- view ("post.show" , [])  , [] => vars inside this array should be used as real arrays starting with $
 - data will be sent from the model
+- in php ojects are like arrays
+- collect => convert arrays to model (object) , collect([])
+- when accss keys don't use $ symbol
+- collection can use  => [] , ->     
+- array can use       => []
+- in php imports no extensions and should be uppercased
+- $table->timestamps() = created_at() , updated_at()

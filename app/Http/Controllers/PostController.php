@@ -1,67 +1,30 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use  App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
 
-    private $posts = [
-        [
-            "id" => 1,
-            'title' => 'First Post',
-            'posted_by' => 'Alice',
-            'created_at' => '2024-06-01'
-        ],
-        [
-            'id' => 2,
-            'title' => 'Second Post',
-            'posted_by' => 'Bob',
-            'created_at' => '2024-06-05'
-        ],
-        [
-            'id' => 3,
-            'title' => 'Second Post',
-            'posted_by' => 'Bob',
-            'created_at' => '2024-06-05'
-        ],
-    ];
-
     public function index()
     {
-
-        return view('posts.index', ["posts" => $this->posts]);
+        $post = Post::all();
+        return view('posts.index', ["posts" => $post]);
     }
-    public function show()
+    public function show(Post $post)
     {
-        $posts = [
-            [
-                "id" => 1,
-                'title' => 'First Post',
-                'posted_by' => 'Alice',
-                'created_at' => '2024-06-01'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Second Post',
-                'posted_by' => 'Bob',
-                'created_at' => '2024-06-05'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Second Post',
-                'posted_by' => 'Bob',
-                'created_at' => '2024-06-05'
-            ],
-        ];
-        $singlePost = array_filter($posts, function () {
-            return 4;
-        });
-        return view("posts.show", ['post' => $singlePost]);
+        return view("posts.show", ['post' => $post, 'name' => 'ahmed']);
     }
 
     public function create()
     {
         return view("posts.create");
+    }
+    public function destroy()
+    {
+        return "test";
     }
     public function store()
     {

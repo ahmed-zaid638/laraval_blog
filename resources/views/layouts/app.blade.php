@@ -10,9 +10,11 @@
 </head>
 
 <body class="bg-gray-100 p-8">
-    <div>
+    <div class="flex  items-center gap-6">
         <h1 class="font-bold text-lg bg-gray-100 p-4 ">Blog Posts</h1>
+        <a href="/posts" class="cursor-pointer underline">All posts</a>
     </div>
     @yield('content')
 </body>
+
 </html>
