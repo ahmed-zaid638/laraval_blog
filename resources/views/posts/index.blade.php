@@ -30,11 +30,11 @@
                         <td class="py-3 px-6 text-left">{{ $post['posted_by'] }}</td>
                         <td class="py-3 px-6 text-left">{{ $post['created_at'] }}</td>
                         <td class="py-3 px-6 text-center">
-                            <a href={{ route('posts.show', ['post' => $post['id']]) }}
+                            <a href="{{ route('posts.show', ['post' => $post['id']]) }}"
                                 class="border rounded-sm px-3 py-1 mr-2 text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white transition duration-200">View</a>
-                            <a href="/posts/{{ $post['id'] }}"
+                            <a href="{{route('posts.edit',  ['post' => $post['id']])}}"
                                 class="border rounded-sm px-3 py-1 mr-2 text-green-500 border-green-500 hover:bg-green-500 hover:text-white transition duration-200">Edit</a>
-                            <a href="/posts/{{ $post['id'] }}"
+                            <a href="{{  route('posts.destroy', ['post' => $post['id']]) }}"
                                 class="border rounded-sm px-3 py-1 text-red-500 border-red-500 hover:bg-red-500 hover:text-white transition duration-200">Delete</a>
                         </td>
                     </tr>

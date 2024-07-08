@@ -21,3 +21,7 @@
 - array can use       => []
 - in php imports no extensions and should be uppercased
 - $table->timestamps() = created_at() , updated_at()
+- route("posts.update") not route("posts/update")
+- when setting anchor tag links you hav to use route() method inside
+- Edit requries 2 controllers mehtods => Edit , Update
+- you are in a viw that cotains a form you can requst the input of this form
